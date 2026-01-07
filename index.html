@@ -2865,9 +2865,16 @@
                 const snapshot = await getDocs(q);
                 
                 const container = document.getElementById('publicationsList');
-                container.innerHTML = snapshot.empty ? '<p>Aucune publication. Créez-en une !</p>' : '';
+                container.innerHTML = '';
                 
+                let validCount = 0;
                 snapshot.forEach(docSnap => {
+                    // Ignorer les documents d'initialisation
+                    if (docSnap.id === '_init' || !docSnap.data().title) {
+                        return;
+                    }
+                    
+                    validCount++;
                     const post = docSnap.data();
                     const card = document.createElement('div');
                     card.className = 'publication-admin-card';
@@ -2889,6 +2896,10 @@
                     `;
                     container.appendChild(card);
                 });
+                
+                if (validCount === 0) {
+                    container.innerHTML = '<p>Aucune publication. Créez-en une !</p>';
+                }
             } catch (error) {
                 console.error('Erreur chargement publications:', error);
             }
