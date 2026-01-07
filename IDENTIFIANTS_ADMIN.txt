@@ -1,0 +1,99 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                   IDENTIFIANTS ADMINISTRATEUR                     ║
+║                    Site de Thérapeute - V2                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🔐 COMPTE ADMINISTRATEUR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📧 Email:     admin@sabrinesjk.fr
+🔑 Mot de passe:  adminsabrinesjk
+
+⚠️  IMPORTANT: Changez ce mot de passe après la première connexion !
+
+
+📋 CRÉATION DU COMPTE ADMIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Le compte admin doit être créé dans Firebase Authentication ET Firestore:
+
+1️⃣  Firebase Authentication:
+   - Allez dans Firebase Console > Authentication > Users
+   - Cliquez sur "Add user"
+   - Email: admin@sabrinesjk.fr
+   - Password: Admin123! (ou votre mot de passe)
+   
+2️⃣  Firestore Database:
+   - Allez dans Firestore Database
+   - Collection: users
+   - Document ID: [UID de l'utilisateur créé dans Authentication]
+   - Champs à ajouter:
+     {
+       "email": "admin@sabrinesjk.fr",
+       "firstName": "Admin",
+       "lastName": "Sabrine",
+       "name": "Admin Sabrine",
+       "role": "admin",  ⬅️ IMPORTANT: Ce champ détermine l'accès admin
+       "createdAt": "2025-12-17T00:00:00.000Z"
+     }
+
+
+🎯 ACCÈS À L'ESPACE ADMIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ouvrez le site: indexV2.html
+2. Cliquez sur "Se connecter" en haut à droite
+3. Entrez vos identifiants admin
+4. Après connexion, cliquez sur "Espace Admin" dans le menu utilisateur
+5. Vous aurez accès à tous les onglets:
+   - 📊 Tableau de bord
+   - 📅 Réservations
+   - 📰 Publications
+   - 📋 Devis
+   - 🧾 Factures
+   - 💰 Dépenses
+   - 📦 Produits & Services
+   - ⚙️ Personnalisation
+
+
+🔧 FONCTIONNALITÉS ADMIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Gestion complète des réservations
+✅ Création et modification de publications
+✅ Génération de devis avec prévisualisation PDF
+✅ Création de factures
+✅ Suivi des dépenses
+✅ Gestion des produits et services
+✅ Personnalisation complète du site:
+   - Couleurs (templates ou personnalisées)
+   - Polices et typographie
+   - Tailles et espacements
+   - Ombres et arrondis
+   - Prévisualisation en temps réel
+✅ Configuration des horaires et notifications
+
+
+💡 CONSEILS DE SÉCURITÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  Changez immédiatement le mot de passe par défaut
+🔒 Utilisez un mot de passe fort (12+ caractères, majuscules, chiffres, symboles)
+🚫 Ne partagez JAMAIS vos identifiants admin
+📱 Activez l'authentification à deux facteurs dans Firebase si possible
+🔐 Sauvegardez ce fichier dans un endroit sécurisé
+🗑️  Supprimez ce fichier après avoir noté vos identifiants
+
+
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+En cas de problème:
+1. Vérifiez que le rôle "admin" est bien défini dans Firestore
+2. Vérifiez la console du navigateur (F12) pour les erreurs
+3. Assurez-vous que Firebase est bien configuré dans firebaseConfig.js
+
+
+✨ Bonne gestion de votre site !
+
+Dernière mise à jour: 17 décembre 2025
